@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    p
+    .col-md-4.offset-4
+        h2 Articles List
+        ul.list-group
+        each article, i in articles
+            li.list-group-item
+                a(href="/articles/"+article._id)=article.title

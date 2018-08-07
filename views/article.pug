@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    p
+    .col-md-6.offset-3
+        h2= article.title
+        p Writen by: #{author}
+        p= article.body
+        p= article.date
+        if user
+            if user.id == article.author
+                a.btn.btn-outline-dark(href="/articles/edit/"+article._id) Edit
+                a.btn.btn-outline-dark.delete-article(href="#", data-id=article._id) Delete

@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    p
+    .col-md-4.offset-4
+        h2 Edit Article
+        form(method='POST', action='/articles/edit/'+ article._id)
+            .form-group
+                label Title:
+                input.form-control(name='title', type='text' value=article.title)
+            .form-group
+                label Author:
+                input.form-control(name='authorname', type='text' value=user.name, readonly)
+                input.form-control(name='author', type='hidden' value=article.author)
+            .form-group
+                label Body:
+                textarea.form-control(name='body', rows=5)=article.body
+            .form-group
+                input.btn.btn-outline-dark(type='submit', value='submit')

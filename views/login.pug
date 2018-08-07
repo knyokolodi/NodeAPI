@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    p
+    .col-md-4.offset-4
+        h2 Login
+        form(method='POST', action='/users/login')
+            .form-group
+                label Username:
+                input.form-control(name='username', type="text")
+            .form-group
+                label Password:
+                input.form-control(name='password', type="password")
+            .form-group
+                input.btn.btn-outline-dark(type='submit', value='Login')

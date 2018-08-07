@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    p
+    .col-md-4.offset-4
+        h2 Add Article
+        form(method='POST', action='/articles/add')
+            .form-group
+                label Title:
+                input.form-control(name='title', type='text')
+            .form-group
+                label Body:
+                textarea.form-control(name='body', rows=5)
+            .form-group
+                input.btn.btn-outline-dark(type='submit', value='submit')
